@@ -1,10 +1,10 @@
 
-using System;
-using UnityEditor.SearchService;
+
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
 
 public class CollisionHandler : MonoBehaviour
 {
@@ -44,15 +44,20 @@ public class CollisionHandler : MonoBehaviour
 
     void Update()
     {
+        //DebugSwitch();
+
+        //RespondToDebugKeys(isDebugging);
+
+    }
+
+    private static void DebugSwitch()
+    {
         if (Keyboard.current.backquoteKey.wasPressedThisFrame)
         {
             isDebugging = !isDebugging;
             debugImage.SetActive(isDebugging);
-            
+
         }
-       
-        RespondToDebugKeys(isDebugging);
-        
     }
 
     private void RespondToDebugKeys(bool isActive)
